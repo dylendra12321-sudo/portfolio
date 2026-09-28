@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="uisual" content="Made with Uisual (uisual.com)">
+    <meta name="author" content="#">
+    <meta name="description" content="#">
+    <meta name="referrer" content="unsafe-url">
+    <meta name="robots" content="index, follow">
+    <!-- SPEED -->
+    <link rel="preconnect" href="https://res.cloudinary.com">
+    <link rel="dns-prefetch" href="https://res.cloudinary.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <!-- LINK -->
+    <link rel="me" href="#">
+    <link rel="canonical" href="#">
+    <link rel="icon" type="image/png" href="#" sizes="48x48">
+    <!-- PERFORMANCE -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <link rel="preload" as="style" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="script" href="script.js" />
+    <link rel="script" href="script.js" />
+    <!-- TITLE -->
+    <title>Dylendra Sooryamuyah</title>
+</head>
+<body>
+    <header role="banner" class="ui-section-header ui-grey">
+        <div class="ui-layout-container">
+            <div class="ui-section-header__layout ui-layout-flex">
+                <!-- LOGO -->
+                <a href="https://www.linkedin.com/in/dylendra/" role="link" aria-label="LinkedIn Profile" target="_blank">
+                    <svg viewBox="0 0 24 24" height="24" width="24" role="img" aria-label="LinkedIn Logo">
+                        <path fill="#0077B5" d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.66c-1.14 0-2.06-.92-2.06-2.06s.92-2.06 2.06-2.06 2.06.92 2.06 2.06-.92 2.06-2.06 2.06zM20.45 20.45h-3.56v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.97v5.69h-3.56V9h3.42v1.56h.05c.48-.91 1.66-1.87 3.42-1.87 3.66 0 4.34 2.41 4.34 5.54v6.22z" />
+                    </svg>
+                </a>
+                <!-- MENU -->
+                <div class="button-container">
+                    <a href="index.html" role="link" aria-label="Home Page" class="ui-component-button ui-component-button-small ui-component-button-primary">Home</a>
+                    <a href="about.html" role="link" aria-label="About Page"  class="ui-component-button ui-component-button-small ui-component-button-primary">About</a>
+                    <a href="contact.html" role="link" aria-label="Contact Page" class="ui-component-button ui-component-button-small ui-component-button-primary">Contact</a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main role="main">
+        <section class="ui-section-hero thin-line">
+            <div class="ui-layout-container">
+                <!-- COPYWRITING -->
+                <div class="ui-layout-column-6 ui-layout-column-center">
+                    <h1>A Collection of Engineering Projects</h1>
+                    <p class="ui-text-intro-subheading">As an MEng Aerospace Engineering student at the University of Bath (2022 - 2027), I completed various impactful projects, integral to my development as an engineer. This portfolio showcases my academic journey. For more details, visit the About page.</p>
+                </div>
+            </div>
+
+      
+            <!-- Slideshow container -->
+            <div class="content-container">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+
+                 
+
+                        <!--Gearbox hand-drawn-->
+                        <!--<div class="numbertext">1 / 3</div>-->
+                        <img src="https://res.cloudinary.com/dv9u5hl5u/image/upload/v1755773185/image1_1_ycbsrx.jpg" style="width:100%" onclick="openModal(this.src)">
+                        <!--<div class="text caption-container">Caption One</div>-->
+                    </div>
+
+                    <!--D&M CAD-->
+                    <div class="mySlides fade">
+                        <!--<div class="numbertext">2 / 3</div>-->
+                        <img src="https://res.cloudinary.com/dv9u5hl5u/image/upload/v1755773446/D_M_CAD_x3qidp.jpg" style="width:100%" onclick="openModal(this.src)">
+                        <!--<div class="text caption-container">Caption Two</div>-->
+                    </div>
+
+                    <!-- Heat Tile Report -->
+                    <div class="mySlides slideshow-img2 fade">
+                        <img src="https://res.cloudinary.com/dv9u5hl5u/image/upload/v1755774896/Group18_ME20021_Report_1_nnw86w.jpg"
+                             style="width:100%; transform: scale(0.8); transition: transform 0.3s ease; cursor:pointer;"
+                             onclick="openPDFModal('https://drive.google.com/file/d/1CLfHmqISp11WHVQazzMfDVAbDSqbK8E7/view?usp=sharing')"
+                             alt="Heat Tile Report Thumbnail">
+                    </div>
+
+                    <!-- PDF Modal -->
+                    <div id="pdfModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); z-index:1000;">
+                        <span onclick="closePDFModal()" style="position:absolute; top:20px; right:40px; color:white; font-size:40px; cursor:pointer;">&times;</span>
+                        <iframe id="pdfFrame" style="width:80vw; height:80vh; margin:10vh 10vw; border:none; background:white;"></iframe>
+                    </div>
+
+          
+
+                    <!--Machine Assembly Report-->
+                    <div class="mySlides slideshow-img2 fade">
+                        <!--<div class="numbertext">4 / 3</div>-->
+                        <img src="https://res.cloudinary.com/dv9u5hl5u/image/upload/v1755774895/Group73_Documentation_1_yjgv7t.jpg"
+                             style="width:100%; cursor:pointer;"
+                             onclick="openPDFModal('https://drive.google.com/file/d/1d0pQVUBpBy5a3xYsRnw-1JVzCIyj_0rY/view?usp=sharing')"
+                             alt="Machine Assembly Report Thumbnail">
+                        <!--<div class="text caption-container">Caption Three</div>-->
+                    </div>
+
+                    <!-- PDF Modal (place this once in your HTML, outside the slides) -->
+                    <div id="pdfModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); z-index:1000;">
+                        <span onclick="closePDFModal()" style="position:absolute; top:20px; right:40px; color:white; font-size:40px; cursor:pointer;">&times;</span>
+                        <iframe id="pdfFrame" style="width:80vw; height:80vh; margin:10vh 10vw; border:none; background:white;"></iframe>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095</a>
+
+                    <br>
+
+                    <div class="dot-container">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                    </div>
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <div class="modal-content">
+                            <img id="modalImage" src="" style="width:100%">
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+        </section>
+
+
+
+        <!--LIBRARY OF SLIDESHOW CONTENTS-->
+        <section class="ui-section-hero thin-line">
+            <div class="ui-layout-container">
+
+                <h2 class=" text-blue-600">Project Gallery</h2>
+                <!--<p class="ui-text-intro">Lorem ipsum dolor sit amet consectetur.</p>-->
+                <div class="container fade-in ui-paddingextra">
+                    <img src="https://res.cloudinary.com/dv9u5hl5u/image/upload/v1755774896/Group18_ME20021_Report_1_nnw86w.jpg" alt="Heat Tile Report Thumbnail"  onclick="openPDFModal('https://drive.google.com/file/d/1CLfHmqISp11WHVQazzMfDVAbDSqbK8E7/view?usp=sharing')">
+                    <img src="https://res.cloudinary.com/dv9u5hl5u/image/upload/v1755774895/Group73_Documentation_1_yjgv7t.jpg" alt="Machine Assembly Report Thumbnail" onclick="openPDFModal('https://drive.google.com/file/d/1d0pQVUBpBy5a3xYsRnw-1JVzCIyj_0rY/view?usp=sharing')">
+                    <img src="https://res.cloudinary.com/dv9u5hl5u/image/upload/v1755773446/D_M_CAD_x3qidp.jpg" alt="D&M CAD" onclick="openModal(this.src)">
+                    <img src="https://res.cloudinary.com/dv9u5hl5u/image/upload/v1755773185/image1_1_ycbsrx.jpg" alt="Gearbox Drawn" onclick="openModal(this.src)">
+                    <img src="https://res.cloudinary.com/dv9u5hl5u/image/upload/v1728376936/cld-sample-2.jpg" alt="Thumbnail 5" onclick="openModal(this.src)">
+                    <img src="https://res.cloudinary.com/dv9u5hl5u/image/upload/v1728376936/cld-sample-2.jpg" alt="Thumbnail 6" onclick="openModal(this.src)">
+                    <img src="https://res.cloudinary.com/dv9u5hl5u/image/upload/v1728376936/cld-sample-2.jpg" alt="Thumbnail 7" onclick="openModal(this.src)">
+                    <img src="https://res.cloudinary.com/dv9u5hl5u/image/upload/v1728376936/cld-sample-2.jpg" alt="Thumbnail 8" onclick="openModal(this.src)">
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!--Footer-->
+    <footer role="contentinfo" class="ui-section-footer ui-grey">
+        <div class="ui-layout-container">
+            <div class="ui-section-footer__layout ui-layout-flex">
+                <!-- COPYRIGHT -->
+                <p class="ui-section-footer--copyright ui-text-note"><small>&copy; 0000 Uisual</small></p>
+                <!-- MENU
+    <nav role="navigation" class="ui-section-footer--nav ui-section-footer--menu ui-layout-flex">
+        <a href="#" role="link" aria-label="#" class="ui-text-note"><small>Terms</small></a>
+    </nav>-->
+                <!-- SOCIAL -->
+                <nav role="navigation" class="ui-section-footer--nav ui-section-footer--social ui-layout-flex">
+                    <a href="https://www.linkedin.com/in/dylendra/" role="link" aria-label="LinkedIn Profile" target="_blank">
+                        <svg viewBox="0 0 24 24" height="16" width="16" fill="none" stroke="#AEAEAE" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" role="img" aria-label="LinkedIn Profile">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" />
+                        </svg>
+                    </a>
+
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
