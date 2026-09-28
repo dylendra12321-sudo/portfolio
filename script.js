@@ -1,0 +1,117 @@
+let slideIndex = 1;
+let slideInterval;
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        slides[i].classList.remove("linear-wipe");
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    slides[slideIndex - 1].classList.add("linear-wipe");
+    dots[slideIndex - 1].className += " active";
+}
+
+function plusSlides(n) {
+    clearInterval(slideInterval); // Stop the automatic slideshow
+    slideIndex += n;
+    if (slideIndex > document.getElementsByClassName("mySlides").length) { slideIndex = 1 }
+    if (slideIndex < 1) { slideIndex = document.getElementsByClassName("mySlides").length }
+    showSlides(slideIndex);
+    slideInterval = setInterval(() => plusSlides(1), 5000); // Restart the automatic slideshow
+}
+
+function currentSlide(n) {
+    clearInterval(slideInterval); // Stop the automatic slideshow
+    slideIndex = n;
+    showSlides(slideIndex);
+    slideInterval = setInterval(() => plusSlides(1), 5000); // Restart the automatic slideshow
+}
+
+window.onload = function () {
+    showSlides(slideIndex); // Start the slideshow when the page loads
+    slideInterval = setInterval(() => plusSlides(1), 5000); // Change image every 5 seconds
+};
+
+function openModal(src) {
+    document.getElementById("myModal").style.display = "block";
+    document.getElementById("modalImage").src = src;
+}
+
+function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    var fadeElements = document.querySelectorAll('.fade-in');
+
+    var observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // Stop observing once the element is visible
+            }
+        });
+    }, {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px', // No margin around the root
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    });
+
+    fadeElements.forEach(function (element) {
+        observer.observe(element);
+    });
+});
+
+function submitForm(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const statusElement = document.getElementById('status');
+
+    // Show a loading message or spinner
+    statusElement.innerText = 'Submitting...';
+    statusElement.className = 'status-message loading';
+
+    fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            // Show a success message
+            statusElement.innerText = 'Form Submitted';
+            statusElement.className = 'status-message success';
+            form.reset(); // Reset the form
+        } else {
+            // Show an error message
+            statusElement.innerText = 'Form submission failed. Please try again.';
+            statusElement.className = 'status-message error';
+        }
+    }).catch(error => {
+        // Show an error message
+        statusElement.innerText = 'Form submission failed. Please try again.';
+        statusElement.className = 'status-message error';
+    });
+}
+
+function openPDFModal(pdfUrl) {
+    document.getElementById('pdfFrame').src = pdfUrl;
+    document.getElementById('pdfModal').style.display = 'block';
+}
+
+function closePDFModal() {
+    document.getElementById('pdfModal').style.display = 'none';
+    document.getElementById('pdfFrame').src = '';
+}
+
